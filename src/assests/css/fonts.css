@@ -56,3 +56,18 @@
     padding: 3px;
     border-radius: 15px;
 }
+.border-no
+{
+
+    border: 2px solid;
+    padding: 3px;
+    border-radius: 10px;
+}
+.hr-line
+{
+    border-top: 2px solid #b993d6;
+}
+.top-gap
+{
+    padding-top: 90px;
+}

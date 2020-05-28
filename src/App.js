@@ -11,6 +11,9 @@ import Header from "./components/Header";
 import CreateProject from "./components/CreateProject";
 import AddProject from "./components/AddProject";
 import UpdateProject from "./components/UpdateProject";
+import ProjectBoard from "./components/ProjectBoard";
+import AddProjectTask from "./components/AddProjectTask";
+import UpdateProjectTask from "./components/UpdateProjectTask";
 function App() {
   return (
       <Provider store={store}>
@@ -25,6 +28,9 @@ function App() {
                   </Route>
                   <Route exact path="/addproject" component={AddProject}/>
                   <Route exact path="/updateproject/:id" component={UpdateProject}/>
+                  <Route exact path="/projectBoard/:id" component={ProjectBoard}/>
+                  <Route exact path="/addProjectTask/:id" component={AddProjectTask}/>
+                  <Route exact path="/updateProjectTask/:backlog_id/:pt_id" component={UpdateProjectTask}/>
               </div>
           </Router>
       </Provider>

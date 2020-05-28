@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../assests/css/updateproject.css'
 import '../assests/css/fonts.css'
-import {createProject, getProject} from "../actions/projectActions";
+import {createProject, getProject,clearProjectErrors} from "../actions/projectActions";
 import PropTypes from "prop-types"
 import {connect} from "react-redux"
 import classnames from 'classnames'
@@ -39,6 +39,10 @@ class UpdateProject extends Component {
         console.log(newProject);
         this.props.createProject(newProject,this.props.history);
     }
+    componentWillUnmount() {
+    this.props.clearProjectErrors();
+    }
+
     componentWillReceiveProps(nextProps) {
 
     const {id,projectName,projectIdentifier,description,start_date,end_date}=nextProps.project;
@@ -142,10 +146,11 @@ UpdateProject.propTypes={
     getProject:PropTypes.func.isRequired,
     project:PropTypes.object.isRequired,
     createProject:PropTypes.func.isRequired,
-    errors:PropTypes.object.isRequired
+    errors:PropTypes.object.isRequired,
+    clearProjectErrors:PropTypes.func.isRequired
 }
 const mapStateToProps=(state)=>({
     project:state.project.project,
     errors:state.errors
 });
-export default connect(mapStateToProps,{getProject,createProject }) (UpdateProject) ;
+export default connect(mapStateToProps,{getProject,createProject,clearProjectErrors }) (UpdateProject) ;

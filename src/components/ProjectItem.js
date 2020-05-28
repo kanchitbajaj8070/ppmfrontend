@@ -19,7 +19,6 @@ class ProjectItem extends Component {
         this.props.deleteProject(id);
 
     }
-
     render() {
         const {projectName,projectIdentifier,description} =this.props.project;
         return (
@@ -35,9 +34,10 @@ class ProjectItem extends Component {
                     <div className="col-sm-4  text-center">
                         <ListGroup className="font-roboto option-list ">
                             <ListGroupItem className="btn option-list ">
-                                <a href="#" className="text-info" ><Image src={require("../assests/icons/project.png")}
+                                <Link to={`/projectBoard/${projectIdentifier}`}
+                                      className="text-info" ><Image src={require("../assests/icons/project.png")}
                                 height="20px" width="20px"/>
-                                Project Board </a>
+                                Project Board </Link>
                             </ListGroupItem >
                             <ListGroupItem  className="btn option-list">
                                 <Link to={`/updateproject/${projectIdentifier}`} className={"text-primary"}>

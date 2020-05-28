@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Image} from "react-bootstrap";
 import {Link} from "react-router-dom";
-
+import '../assests/css/fonts.css'
  const CreateProject =()=>{
         return (
             <React.Fragment>
@@ -19,25 +19,25 @@ import {Link} from "react-router-dom";
                             Create a Project
                         </Link>
                         </div>
-                        <hr/>
+                        <hr className="hr-line"/>
                     </div>
-                </div>
                 </div>
                 <div className="row justify-content-sm-start text-center ">
-                        <div className="col-sm-3 d-none d-sm-block justify-content-sm-start"  >
-                        <div className="font-plex vertical-line text-center">Identifier </div>
+                        <div className="col-sm-2 vertical-line  d-none d-md-block justify-content-sm-start"  >
+                        <div className="font-plex  text-left">Identifier </div>
                         </div>
-                    <div className="col-sm-6 d-none d-sm-block" >
-                        <div className="font-plex vertical-line text-left">Description</div>
+                    <div className="col-sm-6 d-none d-md-block vertical-line " >
+                        <div className="font-plex  text-left">Description</div>
                     </div>
-                    <div className="col-sm-2 d-none d-sm-block" >
-                        <div className="font-plex vertical-line text-left">Options</div>
+                    <div className="col-sm-4 d-none vertical-line d-md-block" >
+                        <div className="font-plex text-left">Options</div>
                     </div>
-                </div>
-                <div className="row justify-content-sm-center">
-                    <div className="col-sm-10 d-none d-sm-block"> <hr/></div>
-                </div>
+                    </div>
 
+                <div className="row justify-content-sm-center">
+                    <div className="col-sm-12 d-none d-md-block"><hr className="hr-line"/> </div>
+                </div>
+                </div>
             </React.Fragment>
         );
 }

@@ -20,6 +20,15 @@ export const createProject=(project,history) => async dispatch=> {
         )
     }
 }
+export const clearProjectErrors=()=>async dispatch=>
+{
+    dispatch(
+        {
+            type:GET_ERRORS,
+            payload:{}
+        }
+    );
+}
 export const getProjects=()=>async dispatch=>
 {
     const res= await axios.get("http://localhost:8090/api/project/all")
@@ -46,6 +55,8 @@ export const getProject=(id,history)=>async dispatch=>
 }
 export const deleteProject=(id,history)=>async dispatch=>
 {
+    if( window.confirm(`Are You sure you wanna delete project ${id}`))
+    {
     const res= await axios.delete(`http://localhost:8090/api/project/${id}`);
     console.log(res.data);
     dispatch(
@@ -55,6 +66,7 @@ export const deleteProject=(id,history)=>async dispatch=>
         }
     );
 
+}
 }
 
 
